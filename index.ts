@@ -1,5 +1,5 @@
 import { DefaultAzureCredential } from "@azure/identity"
-console.log("hi")
+console.log("Starting...")
 const creds = new DefaultAzureCredential()
 ;(async () => {
     const before = +new Date()
