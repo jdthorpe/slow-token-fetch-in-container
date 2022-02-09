@@ -18,7 +18,8 @@ docker-compose run test
 After building the container, a message similar to the following is printed to the screen:
 
 ```Text
-Fetched a token in 286.8 seconds
+Fetched a token with AzureCliCredential in 0.8 seconds
+Fetched a token with DefaultAzureCredential in 328.7 seconds
 ```
 
 whereas using the similar commands run in the same docker container using the az cli directly complete almost immediately:
