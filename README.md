@@ -34,3 +34,17 @@ and running the main script on the host machine yields:
 $ node ./index.js
 Fetched a token in 2.4 seconds
 ```
+
+## Additional info
+
+I thought that there was a possibility that the problem was with a build
+script that was platform specific (hence `test2` in the docker-compose file)
+or that there was a problem with the credentials being mapped in to the host
+via the bound volume `${USERPROFILE}/.azure:/root/.azure` (hence `test3`),
+but both result in printouts like these:
+
+```txt
+Starting...
+Fetched a token with AzureCliCredential in 1.7 seconds
+Fetched a token in with DefaultAzureCredential 288.5 seconds
+```

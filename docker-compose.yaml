@@ -8,3 +8,26 @@ services:
     volumes:
       - ./:/app
       - "${USERPROFILE}/.azure:/root/.azure"
+  test2:
+    # this test installs the npm modules in the container build process
+    # (instead of mapping the node_modules from the windows machine)
+    build:
+      context: .
+      dockerfile: ./alt.Dockerfile
+    volumes:
+      - "${USERPROFILE}/.azure:/root/.azure"
+  test3:
+    # this test requires logging-in within the container
+    # usage:
+    #
+    #   docker-container run test3 --rm -it bash
+    #
+    # and then within the container running:
+    #
+    #   az login
+    #   node index.js
+    #
+    #   az login
+    build:
+      context: .
+      dockerfile: ./alt.Dockerfile
